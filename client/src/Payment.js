@@ -27,7 +27,8 @@ function Payment() {
 
   return (
     <>
-      <h1>React Stripe and the Payment Element</h1>
+      <h1>Join Our Community</h1>
+      <h3>Start discovering the safest products that work for you</h3>
       {clientSecret && stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm />
