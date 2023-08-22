@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&family=Shippori+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 
 :root {
   --light-grey: #F6F9FC;
@@ -17,7 +20,23 @@ body {
 }
 
 main {
-  width: 480px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw
+}
+
+h1 {
+  font-family: "Poppins:wght@200;400";
+  font-weight: 200;
+  font-size: 2.3em;
+}
+
+h3 {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 1em;
+  margin: 0;
 }
 
 form > * {
@@ -25,20 +44,21 @@ form > * {
 }
 
 button {
-  background-color: var(--accent-color);
+  background-color: #d95d68
 }
 
 button {
-  background: var(--accent-color);
+  background: #d95d68;
   border-radius: var(--radius);
   color: white;
   border: 0;
   padding: 12px 16px;
   margin-top: 16px;
-  font-weight: 600;
+  font-weight: 300;
   cursor: pointer;
   transition: all 0.2s ease;
   display: block;
+  width: 100%;
 }
 button:hover {
   filter: contrast(115%);
@@ -53,10 +73,21 @@ button:disabled {
 }
 
 input, select {
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 6px rgba(0, 0, 0, 0.02);
   display: block;
-  font-size: 1.1em;
-  width: 100%;
+  font-size: .9em;
+  height: 4.9vh;
   margin-bottom: 10px;
+  width: 100%;
+  padding-left: 3%;
+  font-family: "Roboto";
+  font-weight: 300;
+}
+
+input::placeholder{
+  color: #000;
 }
 
 label {
@@ -76,12 +107,34 @@ fieldset, input, select {
   border: 1px solid #efefef;
 }
 
+.input-container {
+  position: relative;
+}
+
+.input-with-checkmark {
+  position: relative;
+  display: flex; /* Display the input and checkmark divs side by side */
+  align-items: center; /* Align vertically in the middle */
+}
+
+.checkmark {
+  position: absolute;
+  top: 40%;
+  right: 10px; /* Adjust this value to control the spacing */
+  transform: translateY(-50%);
+}
+
+.checkmark-icon {
+  color: #14c1e7;
+}
+
 #payment-form {
-  border: #F6F9FC solid 1px;
+  /* border: #F6F9FC solid 1px; */
   border-radius: var(--radius);
   padding: 20px;
   margin: 20px 0;
-  box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%);
+  width: 35vw;
+  /* box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%); */
 }
 
 #messages {

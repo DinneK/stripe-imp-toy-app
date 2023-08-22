@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&family=Shippori+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 
 :root {
   --light-grey: #f6f9fc;
@@ -19,6 +22,16 @@ body {
 main {
   width: 480px;
 }
+
+/* h1 {
+  font-family: "Poppins";
+} */
+
+/* h3 {
+  font-family: "Roboto";
+  font-weight: 100;
+  font-size: 1.3em;
+} */
 
 form > * {
   margin: 10px 0;
@@ -55,9 +68,23 @@ button:disabled {
 input,
 select {
   display: block;
-  font-size: 1.1em;
+  font-size: .9em;
   width: 100%;
   margin-bottom: 10px;
+  /* padding-left: 3%;
+  font-family: "Roboto";
+  font-weight: 300; */
+}
+
+.input-container {
+  position: relative;
+}
+
+.checkmark {
+  position: absolute;
+  top: -50%;
+  right: -10px; /* Adjust this value to control the spacing */
+  transform: translateY(-50%);
 }
 
 label {
@@ -80,12 +107,12 @@ select {
 }
 
 #payment-form {
-  border: #f6f9fc solid 1px;
+  /* border: #f6f9fc solid 1px; */
   border-radius: var(--radius);
   padding: 20px;
   margin: 20px 0;
-  box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%),
-    0 30px 60px -30px rgb(0 0 0 / 30%);
+  /* box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%), */
+    /* 0 30px 60px -30px rgb(0 0 0 / 30%); */
 }
 
 #messages {

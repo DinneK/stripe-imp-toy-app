@@ -1,6 +1,8 @@
 import { PaymentElement } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function CheckoutForm() {
   const [firstName, setFirstName] = useState("");
@@ -8,6 +10,12 @@ export default function CheckoutForm() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [firstNameFilled, setFirstNameFilled] = useState(false);
+  const [lastNameFilled, setLastNameFilled] = useState(false);
+  const [phoneNumberFilled, setPhoneNumberFilled] = useState(false);
+  const [emailFilled, setEmailFilled] = useState(false);
+  const [passwordFilled, setPasswordFilled] = useState(false);
 
   const stripe = useStripe();
   const elements = useElements();
@@ -45,45 +53,114 @@ export default function CheckoutForm() {
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="First Name"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Last Name"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Number"
-        value={phoneNumber}
-        onChange={(e) => setPhoneNumber(e.target.value)}
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <div className="input-container">
+        <div className="input-with-checkmark">
+          <input
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+              setFirstNameFilled(e.target.value !== "");
+            }}
+          />
+          {/* Render checkmark if firstNameFilled is true */}
+          {firstNameFilled && (
+            <div className="checkmark">
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                className="checkmark-icon"
+              />
+            </div>
+          )}
+        </div>
+        <div className="input-with-checkmark">
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => {
+              setLastName(e.target.value);
+              setLastNameFilled(e.target.value !== "");
+            }}
+          />
+          {/* Render checkmark if firstNameFilled is true */}
+          {lastNameFilled && (
+            <div className="checkmark">
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                className="checkmark-icon"
+              />
+            </div>
+          )}
+        </div>
+        <div className="input-with-checkmark">
+          <input
+            type="text"
+            placeholder="Number"
+            value={phoneNumber}
+            onChange={(e) => {
+              setPhoneNumber(e.target.value);
+              setPhoneNumberFilled(e.target.value !== "");
+            }}
+          />
+          {phoneNumberFilled && (
+            <div className="checkmark">
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                className="checkmark-icon"
+              />
+            </div>
+          )}
+        </div>
+        <div className="input-with-checkmark">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setEmailFilled(e.target.value !== "");
+            }}
+          />
+          {emailFilled && (
+            <div className="checkmark">
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                className="checkmark-icon"
+              />
+            </div>
+          )}
+        </div>
+        <div className="input-with-checkmark">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setPasswordFilled(e.target.value !== "");
+            }}
+          />
+          {passwordFilled && (
+            <div className="checkmark">
+              <FontAwesomeIcon
+                icon={faCheckCircle}
+                className="checkmark-icon"
+              />
+            </div>
+          )}
+        </div>
 
-      <PaymentElement id="payment-element" />
-      <button disabled={isProcessing || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isProcessing ? "Processing ... " : "Create Account"}
-        </span>
-      </button>
-      {/* Show any error or success messages */}
-      {message && <div id="payment-message">{message}</div>}
+        <PaymentElement id="payment-element" />
+        <button disabled={isProcessing || !stripe || !elements} id="submit">
+          <span id="button-text">
+            {isProcessing ? "Processing ... " : "CREATE ACCOUNT"}
+          </span>
+        </button>
+        {/* Show any error or success messages */}
+        {message && <div id="payment-message">{message}</div>}
+      </div>
     </form>
   );
 }
