@@ -1,6 +1,6 @@
 [build]
 command = "npm run build" # Build script for the server
-functions = "./build" # Directory containing the server code
+functions = "server" # Directory containing the server code
 publish = "client" # Directory containing the React app build
 
 [[redirects]]
