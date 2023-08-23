@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/DinneK/stripe-imp-toy-app/issues"
   },
-  "homepage": "https://github.com/DinneK/stripe-imp-toy-app#readme"
+  "homepage": "https://github.com/DinneK/stripe-imp-toy-app#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
