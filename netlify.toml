@@ -1,8 +1,8 @@
 [build]
 command = "npm run build" # Build script for the server
 functions = "server" # Directory containing the server code
-publish = "client" # Directory containing the React app build
+publish = "./build" # Directory containing the React app build
 
 [[redirects]]
-from = "/*" # Route requests to the Express server
+from = "/api/*" # Route requests to the Express server
 to = "/.netlify/functions/:splat"
