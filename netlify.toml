@@ -4,5 +4,5 @@ functions = "server" # Directory containing the server code
 publish = "client" # Directory containing the React app build
 
 [[redirects]]
-from = "/api/*" # Route requests to the Express server
+from = "/*" # Route requests to the Express server
 to = "/.netlify/functions/:splat"
