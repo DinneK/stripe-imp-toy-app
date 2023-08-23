@@ -2,7 +2,7 @@
   "name": "y",
   "version": "1.0.0",
   "description": "stripe-sample-accept-a-payment",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
     "build": "echo 'No build steps needed for server code'"
