@@ -1,5 +1,5 @@
 [build]
-command = "npm run build" # Build script for the server
+command = "npm run dev" # Build script for the server
 functions = "server" # Directory containing the server code
 publish = "client" # Directory containing the React app build
 
